@@ -48,3 +48,40 @@ Example:
 %
 f=[-5000:5000];
 elec=[3e11 1200 0 0];
+ions=[.5 1000 16 0 0 ; .5 1000 30.5 0 0];
+radar=[224e6 pi];
+
+s = guisdap_spec(f,elec,ions,radar);
+plot(f,s)
+
+
+
+
+Routines for calculating the ion-neutral collision frequencies are
+also included, but these require the MATLAB aerospace toolbox. If you
+have the toolbox installed, you can use the function
+collisionFrequencies to calculate the ion-neutral collision
+frequencies.
+
+Example:
+%
+% ion-neutral collision frequencies at 100 km altitude on 1 Jan 2017
+%  21 UT at geographic latitude 70 deg and longitude 20 deg.
+%
+%
+out = collisionFrequencies( datetime(2017,1,1,21,0,0),70,20,100)
+
+
+The output should be:
+out =
+
+  struct with fields:
+
+    in1: 4.7480e+03
+    in2: 7.6265e+03
+     en: 4.5396e+04
+
+
+
+Here out.in1 is for the molecular ions (a mixture of NO+ and O2+) and out.in2
+for the O+ ions. out.en is the electron-neutral collision frequency.
