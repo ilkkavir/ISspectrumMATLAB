@@ -64,28 +64,29 @@ function [] = ISspectrum()
     figw = 600;
     figh = 880;
     hscale = 1;
-    if sch <  figh*.9
+    if sch <  figh*1.1
         hscale = sch/figh*.9;
     end
     wscale = 1;
-    if scw < figw*.9
+    if scw < figw*1.1
         wscale = scw/figw*.9;
     end
-    figh = figh*hscale;
-    figw = figw*wscale;
-    plotx = 60*wscale;
-    ploty = 380*hscale;
-    plotw = 500*wscale;
-    ploth = 460*hscale;
+    fscale = min([hscale,wscale]);
+    figh = figh*fscale;
+    figw = figw*fscale;
+    plotx = 60*fscale;
+    ploty = 380*fscale;
+    plotw = 500*fscale;
+    ploth = 460*fscale;
     % uicontrols
-    strW = 70*wscale;
-    eboxX = 100*wscale;
-    eboxW = 70*wscale;    
-    slX = 180*wscale;
+    strW = 70*fscale;
+    eboxX = 100*fscale;
+    eboxW = 70*fscale;    
+    slX = 180*fscale;
     slW = plotx + plotw - slX;
-    slh = 30*hscale;
-    dsly = 10*hscale;
-    boxx = 20*wscale;
+    slh = 30*fscale;
+    dsly = 10*fscale;
+    boxx = 20*fscale;
 
 
     % Plot different plots according to slider location.
