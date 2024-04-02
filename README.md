@@ -1,13 +1,16 @@
 # ISspectrumMATLAB
-This MATLAB package for for calculating incoherent scatter spectra was
-extracted from the GUISDAP incoherent scatter analysis software.
+This MATLAB package for calculating incoherent scatter spectra was
+extracted from the [GUISDAP](https://gitlab.com/eiscat/guisdap9) incoherent scatter analysis software by Markku Lehtinen and Asko Huuskonen. 
+
+The spectrum calculation is summarized by [Vallinkoski, 1989](https://eiscat.se/wp-content/uploads/2016/06/Error-Analysis-of-Incoherent-Scatter-Radar-Measurements.pdf) and GUISDAP is introduced by [Lehtinen and Huuskonen, 1996](https://doi.org/10.1016/0021-9169(95)00047-X).
+
 
 ####### installation ###########
 
-Extract the files in the package ISspectrum_2020 to a directory and add it to your matlab
+Extract the files in the package ISspectrum_MATLAB to a directory and add it to your matlab
 search path using the addpath command. For example, if the zip contects were extracted to your home
 directory, use the command
->> addpath ~/ISspectrum_2020
+>> addpath ~/ISspectrum_MATLAB
 
 
 ####### ISspectrum #############
