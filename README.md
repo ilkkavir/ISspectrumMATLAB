@@ -5,7 +5,7 @@ extracted from the [GUISDAP](https://gitlab.com/eiscat/guisdap9) incoherent scat
 The spectrum calculation is summarized by [Vallinkoski, 1989](https://eiscat.se/wp-content/uploads/2016/06/Error-Analysis-of-Incoherent-Scatter-Radar-Measurements.pdf) and GUISDAP is introduced by [Lehtinen and Huuskonen, 1996](https://doi.org/10.1016/0021-9169(95)00047-X).
 
 
-####### installation ###########
+## Installation
 
 Extract the files in the package ISspectrum_MATLAB to a directory and add it to your matlab
 search path using the addpath command. For example, if the zip contects were extracted to your home
@@ -15,7 +15,7 @@ addpath ~/ISspectrum_MATLAB
 ```
 
 
-####### ISspectrum #############
+## ISspectrum
 
 The function ISspectrum is a graphical user interface for the spectrum calculation routines.
 Start the program by typing the command
@@ -33,7 +33,7 @@ to get more instructions.
 ISspectrum uses the GUISDAP function guisdap_spec to calculate the spectra. To calculate spectra with parameters not allowed by the ISspectrum GUI, you can call the function guisdap_spec directly from the matlab command prompt. Notice that there is no graphics available, you will need to also plot the data by yourself.
 
 
-########## guisdap_spec ###########
+## guisdap_spec
 
 The main spectrum calculation routine is the function guisdap_spec. User instructions are available with the standard MATLAB
 help command
@@ -63,6 +63,7 @@ plot(f,s)
 ```
 
 
+## Ion-neutral collision frequencies
 
 Routines for calculating the ion-neutral collision frequencies are also included, but these require the MATLAB aerospace toolbox. If you have the toolbox installed, you can use the function collisionFrequencies to calculate the ion-neutral collision frequencies.
 
