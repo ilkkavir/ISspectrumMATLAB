@@ -14,65 +14,69 @@ directory, use the command
 
 
 ####### ISspectrum #############
+
 The function ISspectrum is a graphical user interface for the spectrum calculation routines.
 Start the program by typing the command
->> ISspectrum
+> ISspectrum
+
 in the matlab command prompt. Use the command
->> help ISspectrum
+> help ISspectrum
+
 to get more instructions
 
-ISspectrum uses the GUISDAP function guisdap_spec to calculate the spectra. To calculate spectra
-with parameters not allowed by the ISspectrum GUI, you can call the function guisdap_spec directly
-from the matlab command prompt. Notice that there is no graphics available, you will need to also
-plot the data by yourself.
+ISspectrum uses the GUISDAP function guisdap_spec to calculate the spectra. To calculate spectra with parameters not allowed by the ISspectrum GUI, you can call the function guisdap_spec directly from the matlab command prompt. Notice that there is no graphics available, you will need to also plot the data by yourself.
 
 
 ########## guisdap_spec ###########
 
 The main spectrum calculation routine is the function
 guisdap_spec. User instructions are available with the standard MATLAB
-help command:
+help command
 
->> help guisdap_spec
+> help guisdap_spec
 
 
 Example:
-%
+
 % electron density 3e11 m^-3
+
 % electron temperature 1200 K
+
 % electron bulk velocity 0 m/s
+
 % electron-neutral collision frequency 0 s^-1
-%
+
 % ion composition 50 % 16u, 50% 30.5u
+
 % ion temperature 1000 K
+
 % ion bulk velocity 0 m/s
+
 % ion-neutral collision frequency 0 s^-1
-%
-%
+
 f=[-5000:5000];
+
 elec=[3e11 1200 0 0];
+
 ions=[.5 1000 16 0 0 ; .5 1000 30.5 0 0];
+
 radar=[224e6 pi];
 
-s = guisdap_spec(f,elec,ions,radar);
-plot(f,s)
+> s = guisdap_spec(f,elec,ions,radar);
+> plot(f,s)
 
 
 
 
-Routines for calculating the ion-neutral collision frequencies are
-also included, but these require the MATLAB aerospace toolbox. If you
-have the toolbox installed, you can use the function
-collisionFrequencies to calculate the ion-neutral collision
-frequencies.
+Routines for calculating the ion-neutral collision frequencies are also included, but these require the MATLAB aerospace toolbox. If you have the toolbox installed, you can use the function collisionFrequencies to calculate the ion-neutral collision frequencies.
 
 Example:
-%
+
 % ion-neutral collision frequencies at 100 km altitude on 1 Jan 2017
+
 %  21 UT at geographic latitude 70 deg and longitude 20 deg.
-%
-%
-out = collisionFrequencies( datetime(2017,1,1,21,0,0),70,20,100)
+
+> out = collisionFrequencies( datetime(2017,1,1,21,0,0),70,20,100)
 
 
 The output should be:
