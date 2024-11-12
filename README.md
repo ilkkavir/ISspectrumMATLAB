@@ -36,7 +36,7 @@ help command
 
 
 Example:
-
+```
 % electron density 3e11 m^-3  
 % electron temperature 1200 K  
 % electron bulk velocity 0 m/s  
@@ -46,13 +46,13 @@ Example:
 % ion bulk velocity 0 m/s  
 % ion-neutral collision frequency 0 s^-1  
 
-> f=[-5000:5000];  
-> elec=[3e11 1200 0 0];  
-> ions=[.5 1000 16 0 0 ; .5 1000 30.5 0 0];  
-> radar=[224e6 pi];  
-> s = guisdap_spec(f,elec,ions,radar);  
-> plot(f,s)  
-
+f=[-5000:5000];  
+elec=[3e11 1200 0 0];  
+ions=[.5 1000 16 0 0 ; .5 1000 30.5 0 0];  
+radar=[224e6 pi];  
+s = guisdap_spec(f,elec,ions,radar);  
+plot(f,s)  
+```
 
 
 
